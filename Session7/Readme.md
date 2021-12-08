@@ -1,4 +1,4 @@
-# Evaluation Metrics
+# NLP Evaluation Metrics
 
 # 1.  Precision for Imbalanced Classification?
 Precision is a metric that quantifies the number of correct positive predictions made.
