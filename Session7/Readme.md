@@ -45,16 +45,29 @@ Consider the same dataset, where a model predicts 50 examples belonging to the m
 # 3. Recall
 
 In information retrieval, recall is the fraction of the relevant documents that are successfully retrieved.
-
-recall = | { relevant documents } ∩ { retrieved documents } | | { relevant documents } | {\displaystyle {\text{recall}}={\frac {|\{{\text{relevant documents}}\}\cap \{{\text{retrieved documents}}\}|}{|\{{\text{relevant documents}}\}|}}}
-
-![{\displaystyle {\text{recall}}={\frac {|\{{\text{relevant documents}}\}\cap \{{\text{retrieved documents}}\}|}{|\{{\text{relevant documents}}\}|}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/43a4548e95fde15433d8e3cd3c80ced433f54abe)
-
 For example, for a text search on a set of documents, recall is the number of correct results divided by the number of results that should have been returned.
-
-In binary classification, recall is called [sensitivity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity#Sensitivity "Sensitivity and specificity"). It can be viewed as the probability that a relevant document is retrieved by the query.
+In binary classification, recall is called [sensitivity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity#Sensitivity "Sensitivity and specificity").
+It can be viewed as the probability that a relevant document is retrieved by the query.
 
 It is trivial to achieve recall of 100% by returning all documents in response to any query. Therefore, recall alone is not enough but one needs to measure the number of non-relevant documents also, for example by also computing the precision.
+In an imbalanced classification problem with two classes, recall is calculated as the number of true positives divided by the total number of true positives and false negatives.
+
+    Recall = TruePositives / (TruePositives + FalseNegatives)
+
+The result is a value between 0.0 for no recall and 1.0 for full or perfect recall.
+
+Let’s make this calculation concrete with some examples.
+
+As in the previous section, consider a dataset with 1:100 minority to majority ratio, with 100 minority examples and 10,000 majority class examples.
+
+A model makes predictions and predicts 90 of the positive class predictions correctly and 10 incorrectly. We can calculate the recall for this model as follows:
+
+    Recall = TruePositives / (TruePositives + FalseNegatives)
+    Recall = 90 / (90 + 10)
+    Recall = 90 / 100
+    Recall = 0.9
+
+This model has a good recall.
 
 
 # 4. BLEU
